@@ -1,0 +1,5 @@
+# Introspect disks available on the machines using a container
+
+Similar to eDeploy introspetion feature.
+We run a container and it scans all the devices available, return a list to k8s for the host where the container was ran.
+Make sure the next container (the actual OSD) will run on the same machine (the one that was introspected), maybe we can then force where to run the container.
