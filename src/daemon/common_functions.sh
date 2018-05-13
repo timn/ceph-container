@@ -62,6 +62,9 @@ function create_mandatory_directories {
   # Make the monitor directory
   mkdir -p "$MON_DATA_DIR"
 
+  # Make monmap directory
+  mkdir -p $(dirname $MONMAP)
+
   # Create socket directory
   mkdir -p /var/run/ceph
 
@@ -76,7 +79,8 @@ function create_mandatory_directories {
 
   # Adjust the owner of all those directories
   chown "${CHOWN_OPT[@]}" -R ceph. /var/run/ceph/
-  find -L /var/lib/ceph/ -mindepth 1 -maxdepth 3 -exec chown "${CHOWN_OPT[@]}" ceph. {} \;
+  # Ignore errors here (through "|| :"), in K8s some will be read-only
+  find -L /var/lib/ceph/ -mindepth 1 -maxdepth 3 -exec chown "${CHOWN_OPT[@]}" ceph. {} \; || :
 }
 
 # Print resolved symbolic links of a device

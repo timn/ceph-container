@@ -61,6 +61,9 @@ function create_mandatory_directories {
   # Make the monitor directory
   mkdir -p "$MON_DATA_DIR"
 
+  # Make monmap directory
+  mkdir -p $(dirname $MONMAP)
+
   # Create socket directory
   mkdir -p /var/run/ceph
 

@@ -108,6 +108,6 @@ RGW_BOOTSTRAP_KEYRING=/var/lib/ceph/bootstrap-rgw/${CLUSTER}.keyring
 OSD_BOOTSTRAP_KEYRING=/var/lib/ceph/bootstrap-osd/${CLUSTER}.keyring
 RBD_MIRROR_BOOTSTRAP_KEYRING=/var/lib/ceph/bootstrap-rbd/${CLUSTER}.keyring
 OSD_PATH_BASE=/var/lib/ceph/osd/${CLUSTER}
-MONMAP=/etc/ceph/monmap-${CLUSTER}
+MONMAP=/var/lib/ceph/monmap/monmap-${CLUSTER}
 MGR_KEYRING=/var/lib/ceph/mgr/${CLUSTER}-${MGR_NAME}/keyring
 RBD_MIRROR_KEYRING=/etc/ceph/${CLUSTER}.client.rbd-mirror.${HOSTNAME}.keyring
